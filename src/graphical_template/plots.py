@@ -9,7 +9,7 @@ def get_gradient_cmap(name="custom_brand", n_colors=10):
     cmap = mcolors.LinearSegmentedColormap.from_list(name, colors, N=n_colors)
     return cmap
 
-def NUHS_bar_chart(labels, values, x_label = None, y_label = None, title=None):
+def NUHS_bar_chart(labels, values, x_label = None, y_label = None, title=None, save_path=None):
     cmap = get_gradient_cmap(n_colors=len(values))
     colors = [cmap(i) for i in range(len(values))]
 
@@ -32,10 +32,13 @@ def NUHS_bar_chart(labels, values, x_label = None, y_label = None, title=None):
         label.set_fontproperties(theme.font_prop)
         # label.set_fontsize(font_size)
 
+    if save_path:
+        fig.savefig(save_path, dpi=600, bbox_inches='tight')
+
     plt.show()
 
 
-def NUHS_stacked_bar_chart(labels, data, category_names, x_label = None, y_label = None, title = None):
+def NUHS_stacked_bar_chart(labels, data, category_names, x_label = None, y_label = None, title = None,  save_path=None):
     if len(category_names) == 1:
         raise ValueError("Stacked bar chart requires at least two categories.")
 
@@ -68,9 +71,11 @@ def NUHS_stacked_bar_chart(labels, data, category_names, x_label = None, y_label
 
     ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1))
     # plt.tight_layout()
+    if save_path:
+        fig.savefig(save_path, dpi=600, bbox_inches='tight')
     plt.show()
 
-def NUHS_grouped_bar_chart(labels, data, category_names, x_label = None, y_label = None, title=None):
+def NUHS_grouped_bar_chart(labels, data, category_names, x_label = None, y_label = None, title=None, save_path=None):
     if len(category_names) == 1:
         raise ValueError("Grouped bar chart requires at least two categories.")
 
@@ -106,11 +111,12 @@ def NUHS_grouped_bar_chart(labels, data, category_names, x_label = None, y_label
 
     ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1))
     ax.set_ylim(0, data.max() * 1.1)
-
+    if save_path:
+        fig.savefig(save_path, dpi=600, bbox_inches='tight')
     plt.show()
 
 
-def NUHS_scatter_plot(x_groups, y_groups, category_names, labels_groups=None, x_label = None, y_label = None, title=None):
+def NUHS_scatter_plot(x_groups, y_groups, category_names, labels_groups=None, x_label = None, y_label = None, title=None, save_path=None):
     """
     Plots a categorized scatter plot with NUHS theme.
 
@@ -158,10 +164,13 @@ def NUHS_scatter_plot(x_groups, y_groups, category_names, labels_groups=None, x_
         label.set_fontname(theme.font_name)
 
     ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
+
+    if save_path:
+        fig.savefig(save_path, dpi=600, bbox_inches='tight')
     plt.show()
 
 
-def NUHS_line_plot(x, y_list, category_names, x_label = None, y_label = None, title=None):
+def NUHS_line_plot(x, y_list, category_names, x_label = None, y_label = None, title=None, save_path=None):
     fig, ax = plt.subplots(constrained_layout=True)
     n_categories = len(category_names)
 
@@ -187,9 +196,12 @@ def NUHS_line_plot(x, y_list, category_names, x_label = None, y_label = None, ti
         label.set_fontname(theme.font_name)
 
     ax.legend(loc='upper right', bbox_to_anchor=(1.35, 1))
+
+    if save_path:
+        fig.savefig(save_path, dpi=600, bbox_inches='tight')
     plt.show()
 
-def NUHS_pie_chart(labels, values, title=None):
+def NUHS_pie_chart(labels, values, title=None, save_path=None):
     n_categories = len(labels)
     if n_categories == 2:
         colors = list(theme.BRAND_COLORS.values())[-2::-2]
@@ -217,5 +229,7 @@ def NUHS_pie_chart(labels, values, title=None):
         text.set_color("white")  # set percentage values to white
         text.set_fontname(theme.font_name)
 
+    if save_path:
+        fig.savefig(save_path, dpi=600, bbox_inches='tight')
     plt.show()
 
