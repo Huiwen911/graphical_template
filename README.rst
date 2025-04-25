@@ -22,7 +22,7 @@ currently, only various types of bar charts are added
 - Line plot
 - Pie chart
 
-📓[View the example demo in test_run.ipynb](test_run.ipynb)
+📓 [View the example demo in test_run.ipynb](test_run.ipynb)
 
 Credits
 -------
