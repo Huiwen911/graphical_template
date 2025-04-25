@@ -1,4 +1,3 @@
-==========
 Graphical Template for NUHS
 ==========
 
@@ -12,7 +11,7 @@ A customizable Matplotlib-based visualization library styled with NUHS brand col
 
 
 Features
---------
+
 currently, only various types of bar charts are added
 
 - Bar chart
@@ -22,7 +21,8 @@ currently, only various types of bar charts are added
 - Line plot
 - Pie chart
 
-📓 [View the example demo in test_run.ipynb](https://github.com/Huiwen911/graphical_template/blob/main/test_run.ipynb)
+[view demo](test_run.ipynb)
+
 
 Credits
 -------
