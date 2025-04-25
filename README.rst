@@ -1,5 +1,5 @@
 ==========
-visualplot
+Graphical Template for NUHS
 ==========
 
 
@@ -7,14 +7,21 @@ visualplot
 
 
 
-Customised default settings for graphical visualisation
+A customizable Matplotlib-based visualization library styled with NUHS brand colors and fonts.
 
 
 
 Features
 --------
+currently, only various types of bar charts are added
+- Bar chart
+- Stacked bar chart
+- Grouped bar chart
+- Scatter plot
+- Line plot
+- Pie chart
 
-* TODO
+📓 [View the example demo in test_run.ipynb](test_run.ipynb)
 
 Credits
 -------
