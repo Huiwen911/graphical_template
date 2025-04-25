@@ -14,6 +14,7 @@ A customizable Matplotlib-based visualization library styled with NUHS brand col
 Features
 --------
 currently, only various types of bar charts are added
+
 - Bar chart
 - Stacked bar chart
 - Grouped bar chart
